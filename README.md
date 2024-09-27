@@ -1,4 +1,9 @@
-## vite-mui-ts boilerplate
+# kpmg-frontend-homework-project
+
+- Original boilerplate: [https://github.com/emre-cil/vite-mui-ts/](https://github.com/emre-cil/vite-mui-ts/)
+- Deployed app: [https://kpmg-frontend-homework-project.vercel.app/](https://kpmg-frontend-homework-project.vercel.app/)
+
+## Original boilerplate README 👇
 
 TypeScript + React + Redux + MUI + RRD + ESLint + Prettier
 
@@ -53,7 +58,6 @@ if you don't want to use you can remove these lines from
     }
 ```
 
-
 ### Scripts
 
 | Script        | Description                        |
@@ -67,4 +71,7 @@ if you don't want to use you can remove these lines from
 | pnpm test     | Run tests                          |
 
 ### Check List
-````
+
+```
+
+```
