@@ -6,7 +6,11 @@ import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import PetsIcon from '@mui/icons-material/Pets';
 import { IconButton } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
+import styled from '@emotion/styled';
+
+const StyledTypography = styled(Typography)`
+  cursor: pointer;
+`;
 
 function Menu() {
   const navigate = useNavigate();
@@ -15,14 +19,13 @@ function Menu() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <PetsIcon sx={{ mr: 1 }} />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            BreedBuddy
-          </Typography>
-
           <IconButton size="large" color="inherit" aria-label="menu" onClick={() => navigate('/')}>
-            <HomeIcon />
+            <PetsIcon />
           </IconButton>
+
+          <StyledTypography variant="h6" sx={{ flexGrow: 1 }} onClick={() => navigate('/')}>
+            BreedBuddy
+          </StyledTypography>
 
           <Button color="inherit" onClick={() => navigate('/breeds')}>
             Breeds
