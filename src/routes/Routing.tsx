@@ -18,7 +18,7 @@ function Routing() {
         <Route path="favorites" element={<Favorites />} />
       </Route>
 
-      <Route path="*" element={<NotFound entity="Page" />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

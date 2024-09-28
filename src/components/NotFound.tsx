@@ -1,7 +1,7 @@
 import { Typography, Container, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-function NotFound({ entity }: { entity: 'Page' | 'Breed' }) {
+function NotFound({ entity = 'Page' }: { entity?: 'Page' | 'Breed' }) {
   const navigate = useNavigate();
 
   return (
