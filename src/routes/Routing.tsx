@@ -4,10 +4,7 @@ import Home from '@/pages/Home/Home';
 import Breeds from '@/components/Breeds';
 import Breed from '@/components/Breed';
 import Favorites from '@/components/Favorites';
-
-const NoMatch = () => {
-  return <p>Page not found!</p>;
-};
+import NotFound from '@/components/NotFound';
 
 const Routing = () => {
   return (
@@ -21,7 +18,7 @@ const Routing = () => {
         <Route path="favorites" element={<Favorites />} />
       </Route>
 
-      <Route path="*" element={<NoMatch />} />
+      <Route path="*" element={<NotFound entity="Page" />} />
     </Routes>
   );
 };

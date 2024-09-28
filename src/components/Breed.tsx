@@ -9,6 +9,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useParams } from 'react-router-dom';
 
 import dogs from '@/assets/dogs.json';
+import NotFound from './NotFound';
 
 function Breed() {
   const { breed } = useParams();
@@ -16,7 +17,7 @@ function Breed() {
   const dog = dogs.find((dog) => dog.id === Number(breed));
 
   if (!dog) {
-    return <p>Dog not found!</p>;
+    return <NotFound entity="Breed" />;
   }
 
   return (
