@@ -6,7 +6,7 @@ import Breed from '@/components/Breed';
 import Favorites from '@/components/Favorites';
 import NotFound from '@/components/NotFound';
 
-const Routing = () => {
+function Routing() {
   return (
     <Routes>
       <Route index element={<Home />} />
@@ -21,6 +21,6 @@ const Routing = () => {
       <Route path="*" element={<NotFound entity="Page" />} />
     </Routes>
   );
-};
+}
 
 export default Routing;

@@ -1,6 +1,6 @@
 import { Stack, Container, Typography } from '@mui/material';
 
-const Home = () => {
+function Home() {
   return (
     <Container>
       <Stack>
@@ -8,6 +8,6 @@ const Home = () => {
       </Stack>
     </Container>
   );
-};
+}
 
 export default Home;

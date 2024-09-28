@@ -4,7 +4,7 @@ import { CssBaseline } from '@mui/material';
 import Routing from './routes/Routing';
 import Menu from './components/Menu';
 
-const App = () => {
+function App() {
   return (
     <BrowserRouter>
       <CssBaseline />
@@ -14,6 +14,6 @@ const App = () => {
       <Routing />
     </BrowserRouter>
   );
-};
+}
 
 export default App;
