@@ -6,12 +6,19 @@ import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useParams } from 'react-router-dom';
 
 import dogs from '@/assets/dogs.json';
 
-const dog = dogs[0];
-
 function Breed() {
+  const { breed } = useParams();
+
+  const dog = dogs.find((dog) => dog.id === Number(breed));
+
+  if (!dog) {
+    return <p>Dog not found!</p>;
+  }
+
   return (
     <Card>
       <CardHeader title={dog.name} subheader={dog.breed_group} />

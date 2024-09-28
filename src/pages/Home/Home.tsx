@@ -1,14 +1,12 @@
-import { Stack, Container } from '@mui/material';
-
-import Breeds from '@/components/Breeds';
-// import Breed from '@/components/Breed';
-// import Favorites from '@/components/Favorites';
+import { Stack, Container, Typography } from '@mui/material';
 
 const Home = () => {
   return (
     <Container>
       <Stack>
-        <Breeds />
+        <Typography textAlign="center" variant="h1">
+          Hello World!
+        </Typography>
       </Stack>
     </Container>
   );
