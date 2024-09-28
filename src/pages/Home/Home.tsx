@@ -1,12 +1,14 @@
-import { Typography, Stack, Container } from '@mui/material';
+import { Stack, Container } from '@mui/material';
+
+import Breeds from '@/components/Breeds';
+// import Breed from '@/components/Breed';
+// import Favorites from '@/components/Favorites';
 
 const Home = () => {
   return (
-    <Container sx={{ py: 2, position: 'relative' }}>
-      <Stack gap={1} my={2}>
-        <Typography textAlign="center" variant="h1">
-          Hello World!
-        </Typography>
+    <Container>
+      <Stack>
+        <Breeds />
       </Stack>
     </Container>
   );
