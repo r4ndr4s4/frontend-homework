@@ -17,7 +17,7 @@ function Menu() {
         <Toolbar>
           <PetsIcon sx={{ mr: 1 }} />
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Dog app
+            BreedBuddy
           </Typography>
 
           <IconButton size="large" color="inherit" aria-label="menu" onClick={() => navigate('/')}>
