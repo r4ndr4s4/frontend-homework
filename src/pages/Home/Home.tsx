@@ -4,9 +4,7 @@ const Home = () => {
   return (
     <Container>
       <Stack>
-        <Typography textAlign="center" variant="h1">
-          Hello World!
-        </Typography>
+        <Typography variant="h1">Hello World!</Typography>
       </Stack>
     </Container>
   );
