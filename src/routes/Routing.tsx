@@ -1,9 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
 
-import Home from '@/pages/Home/Home';
-import Breeds from '@/components/Breeds';
+import Home from '@/pages/Home';
+import Breeds from '@/components/DataGrid/Breeds';
 import Breed from '@/components/Breed';
-import Favorites from '@/components/Favorites';
+import Favorites from '@/components/DataGrid/Favorites';
 import NotFound from '@/components/NotFound';
 
 function Routing() {

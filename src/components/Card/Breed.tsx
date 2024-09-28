@@ -9,7 +9,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useParams } from 'react-router-dom';
 
 import dogs from '@/assets/dogs.json';
-import NotFound from './NotFound';
+import NotFound from '../NotFound';
 
 function Breed() {
   const { breed } = useParams();
