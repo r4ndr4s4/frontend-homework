@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import Home from '@/pages/Home';
 import Breeds from '@/components/DataGrid/Breeds';
-import Breed from '@/components/Breed';
+import Breed from '@/components/Card/Breed';
 import Favorites from '@/components/DataGrid/Favorites';
 import NotFound from '@/components/NotFound';
 
