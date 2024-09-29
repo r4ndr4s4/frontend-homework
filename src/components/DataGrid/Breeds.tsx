@@ -6,7 +6,8 @@ import { useEffect, useState } from 'react';
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 
 import Container from '../Container';
-import { fetchBreeds, queryDefaults } from '@/utils';
+import { fetchBreeds } from '@/utils';
+import { useAppDispatch } from '@/app/store';
 
 function Breeds({ columns }: { columns?: GridColDef[] }) {
   const [paginationModel, setPaginationModel] = useState({
@@ -16,6 +17,7 @@ function Breeds({ columns }: { columns?: GridColDef[] }) {
   const [rows, setRows] = useState<GridRowsProp>();
 
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const {
     isPending,
@@ -23,9 +25,8 @@ function Breeds({ columns }: { columns?: GridColDef[] }) {
     data: breeds,
   } = useQuery({
     queryKey: ['breeds', { page: paginationModel.page, limit: paginationModel.pageSize }],
-    queryFn: () => fetchBreeds(paginationModel.pageSize, paginationModel.page),
+    queryFn: () => fetchBreeds(paginationModel.pageSize, paginationModel.page, dispatch),
     placeholderData: keepPreviousData,
-    ...queryDefaults,
   });
 
   useEffect(() => {

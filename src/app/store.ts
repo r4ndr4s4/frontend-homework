@@ -1,9 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
 
+import { breedsReducer } from '@/features/breedsSlice';
+
 const store = configureStore({
-  reducer: {},
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(),
+  reducer: {
+    breeds: breedsReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
