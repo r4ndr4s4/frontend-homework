@@ -1,7 +1,7 @@
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 
 import { useAppSelector } from '@/app/store';
-import { fetchBreed } from '@/utils';
+import { fetchBreed } from '@/app/api';
 
 function useBreed(breedIdAsString?: string) {
   if (!breedIdAsString) {

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { GridRowsProp } from '@mui/x-data-grid';
 
 import { useAppDispatch } from '@/app/store';
-import { fetchBreeds } from '@/utils';
+import { fetchBreeds } from '@/app/api';
 
 function useBreeds(page: number, limit: number) {
   const [rows, setRows] = useState<GridRowsProp>();
