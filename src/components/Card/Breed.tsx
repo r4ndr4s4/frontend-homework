@@ -8,28 +8,38 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useParams } from 'react-router-dom';
 
-import dogs from '@/assets/dogs.json';
 import NotFound from '../NotFound';
 import Container from '../Container';
+import useBreed from '@/hooks/useBreed';
 
 function Breed() {
-  const { breed } = useParams();
+  const { breedId } = useParams();
 
-  const dog = dogs.find((dog) => dog.id === Number(breed));
+  const { isPending, error, breed } = useBreed(breedId);
 
-  if (!dog) {
+  if (isPending) {
+    return 'Loading...';
+  }
+
+  // TODO add error boundary
+  if (error) {
+    return 'An error has occurred: ' + error.message;
+  }
+
+  if (!breed) {
     return <NotFound entity="Breed" />;
   }
 
   return (
     <Container>
       <Card>
-        <CardHeader title={dog.name} subheader={dog.breed_group} />
-        <CardMedia component="img" height="250" image="https://placehold.co/250x250" alt={dog.name} />
+        <CardHeader title={breed.name} subheader={breed.breed_group} />
+        <CardMedia component="img" height="250" image="https://placehold.co/250x250" alt={breed.name} />
 
         <CardContent>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            {dog.bred_for}. {dog.life_span}. {dog.weight.metric} kgs, {dog.height.metric} cms. {dog.temperament}.
+            {breed.bred_for}. {breed.life_span}. {breed.weight.metric} kgs, {breed.height.metric} cms.{' '}
+            {breed.temperament}.
           </Typography>
         </CardContent>
 

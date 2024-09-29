@@ -13,3 +13,9 @@ export const fetchBreeds = async (limit: number, page: number, dispatch: AppDisp
 
   return data;
 };
+
+export const fetchBreed = async (breedId: number): Promise<Breed> => {
+  const { data } = await axios.get(`${API_BASE_URL}/breeds/${breedId}`);
+
+  return data;
+};

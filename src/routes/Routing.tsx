@@ -14,7 +14,7 @@ function Routing() {
       <Route path="breeds">
         <Route index element={<Breeds />} />
 
-        <Route path=":breed" element={<Breed />} />
+        <Route path=":breedId" element={<Breed />} />
         <Route path="favorites" element={<Favorites />} />
       </Route>
 
