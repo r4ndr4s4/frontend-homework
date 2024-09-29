@@ -1,49 +1,21 @@
-import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { IconButton } from '@mui/material';
 import LaunchIcon from '@mui/icons-material/Launch';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import { keepPreviousData, useQuery } from '@tanstack/react-query';
+import { useState } from 'react';
 
 import Container from '../Container';
-import { fetchBreeds } from '@/utils';
-import { useAppDispatch } from '@/app/store';
+import useBreeds from '@/hooks/useBreeds';
 
 function Breeds({ columns }: { columns?: GridColDef[] }) {
   const [paginationModel, setPaginationModel] = useState({
     pageSize: 25,
     page: 0,
   });
-  const [rows, setRows] = useState<GridRowsProp>();
 
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
 
-  const {
-    isPending,
-    error,
-    data: breeds,
-  } = useQuery({
-    queryKey: ['breeds', { page: paginationModel.page, limit: paginationModel.pageSize }],
-    queryFn: () => fetchBreeds(paginationModel.pageSize, paginationModel.page, dispatch),
-    placeholderData: keepPreviousData,
-  });
-
-  useEffect(() => {
-    if (!breeds) {
-      return;
-    }
-
-    const rows: GridRowsProp = breeds.map((dog) => ({
-      id: dog.id,
-      breed: 'https://placehold.co/50x50', // dog.reference_image_id
-      name: dog.name,
-      group: dog.breed_group,
-      life: dog.life_span,
-    }));
-
-    setRows(rows);
-  }, [breeds]);
+  const { isPending, error, rows } = useBreeds(paginationModel.page, paginationModel.pageSize);
 
   const defaultColumns: GridColDef[] = [
     {
