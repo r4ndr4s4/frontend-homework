@@ -1,11 +1,11 @@
-import { Stack, Container, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+
+import Container from '@/components/Container';
 
 function Home() {
   return (
     <Container>
-      <Stack>
-        <Typography variant="h1">Hello World!</Typography>
-      </Stack>
+      <Typography variant="h1">Hello World!</Typography>
     </Container>
   );
 }

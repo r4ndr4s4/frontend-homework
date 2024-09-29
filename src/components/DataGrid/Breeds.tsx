@@ -4,6 +4,7 @@ import LaunchIcon from '@mui/icons-material/Launch';
 import { useNavigate } from 'react-router-dom';
 
 import dogs from '@/assets/dogs.json';
+import Container from '../Container';
 
 function Breeds({ columns }: { columns?: GridColDef[] }) {
   const navigate = useNavigate();
@@ -44,7 +45,11 @@ function Breeds({ columns }: { columns?: GridColDef[] }) {
     },
   ];
 
-  return <DataGrid rows={rows} columns={columns || defaultColumns} disableRowSelectionOnClick disableColumnResize />;
+  return (
+    <Container>
+      <DataGrid rows={rows} columns={columns || defaultColumns} disableRowSelectionOnClick disableColumnResize />
+    </Container>
+  );
 }
 
 export default Breeds;

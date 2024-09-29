@@ -10,6 +10,7 @@ import { useParams } from 'react-router-dom';
 
 import dogs from '@/assets/dogs.json';
 import NotFound from '../NotFound';
+import Container from '../Container';
 
 function Breed() {
   const { breed } = useParams();
@@ -21,22 +22,24 @@ function Breed() {
   }
 
   return (
-    <Card>
-      <CardHeader title={dog.name} subheader={dog.breed_group} />
-      <CardMedia component="img" height="250" image="https://placehold.co/250x250" alt={dog.name} />
+    <Container>
+      <Card>
+        <CardHeader title={dog.name} subheader={dog.breed_group} />
+        <CardMedia component="img" height="250" image="https://placehold.co/250x250" alt={dog.name} />
 
-      <CardContent>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          {dog.bred_for}. {dog.life_span}. {dog.weight.metric} kgs, {dog.height.metric} cms. {dog.temperament}.
-        </Typography>
-      </CardContent>
+        <CardContent>
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            {dog.bred_for}. {dog.life_span}. {dog.weight.metric} kgs, {dog.height.metric} cms. {dog.temperament}.
+          </Typography>
+        </CardContent>
 
-      <CardActions>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-      </CardActions>
-    </Card>
+        <CardActions>
+          <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+        </CardActions>
+      </Card>
+    </Container>
   );
 }
 

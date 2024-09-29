@@ -1,5 +1,7 @@
-import { Typography, Container, Button } from '@mui/material';
+import { Typography, Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+
+import Container from './Container';
 
 function NotFound({ entity = 'Page' }: { entity?: 'Page' | 'Breed' }) {
   const navigate = useNavigate();
