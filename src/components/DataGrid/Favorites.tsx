@@ -5,6 +5,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Breeds from './Breeds';
 
 function Favorites() {
+  // TODO useMemo
   const columns: GridColDef[] = [
     {
       field: 'breed',

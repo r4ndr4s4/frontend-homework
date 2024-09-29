@@ -17,6 +17,7 @@ function Breeds({ columns }: { columns?: GridColDef[] }) {
 
   const { isPending, error, rows } = useBreeds(paginationModel.page, paginationModel.pageSize);
 
+  // TODO useMemo
   const defaultColumns: GridColDef[] = [
     {
       field: 'breed',
