@@ -29,7 +29,7 @@ function Breeds({ columns }: { columns?: GridColDef[] }) {
   });
 
   useEffect(() => {
-    if (!breeds) {
+    if (!breeds || !breeds.length) {
       return;
     }
 
