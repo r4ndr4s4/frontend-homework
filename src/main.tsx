@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <AppThemeProvider>
           <App />
           <Analytics />
-          <ReactQueryDevtools initialIsOpen={false} />
+          <ReactQueryDevtools initialIsOpen={false} buttonPosition="top-right" />
         </AppThemeProvider>
       </QueryClientProvider>
     </Provider>
