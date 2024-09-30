@@ -1,6 +1,5 @@
 import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles';
 import React from 'react';
-import type {} from '@mui/x-data-grid/themeAugmentation';
 
 type Props = {
   children?: React.ReactNode;
