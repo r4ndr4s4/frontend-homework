@@ -11,7 +11,7 @@ import NotFound from '../NotFound';
 import Container from '../Container';
 import useBreed from '@/hooks/useBreed';
 import { useAppDispatch, useAppSelector } from '@/app/store';
-import { add, remove } from '@/features/favoritesSlice';
+import { add as addFavorite, remove as removeFavorite } from '@/features/favoritesSlice';
 
 function Breed({ breedId }: { breedId: number }) {
   const { isPending, error, breed } = useBreed(breedId);
@@ -53,7 +53,7 @@ function Breed({ breedId }: { breedId: number }) {
         <CardActions>
           <IconButton
             aria-label="add to favorites"
-            onClick={() => dispatch(isFavorite ? remove(breedId) : add(breedId))}
+            onClick={() => dispatch(isFavorite ? removeFavorite(breedId) : addFavorite(breedId))}
           >
             <FavoriteIcon sx={{ color: isFavorite ? 'Red.Base' : 'inherit' }} />
           </IconButton>
