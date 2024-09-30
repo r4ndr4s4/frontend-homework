@@ -1,4 +1,4 @@
-import Card from '@mui/material/Card';
+import MaterialCard from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
@@ -9,7 +9,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 import { Breed as BreedType } from '@/utils/types';
 
-function BreedCard({
+function Card({
   breed,
   isFavorite,
   handleFavoriteChange,
@@ -19,7 +19,7 @@ function BreedCard({
   handleFavoriteChange: () => void;
 }) {
   return (
-    <Card>
+    <MaterialCard>
       <CardHeader title={breed.name} subheader={breed.breed_group} />
       <CardMedia
         component="img"
@@ -39,8 +39,8 @@ function BreedCard({
           <FavoriteIcon sx={{ color: isFavorite ? 'Red.Base' : 'inherit' }} />
         </IconButton>
       </CardActions>
-    </Card>
+    </MaterialCard>
   );
 }
 
-export default BreedCard;
+export default Card;

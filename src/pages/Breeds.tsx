@@ -3,7 +3,7 @@ import useBreeds from '@/hooks/useBreeds';
 import Error from '../components/Error';
 import { useAppDispatch, useAppSelector } from '@/app/store';
 import { next, previous } from '@/features/breedsSlice';
-import Breeds from '@/components/Grid/Breeds';
+import Breeds from '@/components/Grid/Grid';
 
 function BreedsPage() {
   const dispatch = useAppDispatch();

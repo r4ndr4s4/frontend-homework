@@ -5,17 +5,7 @@ import LaunchIcon from '@mui/icons-material/Launch';
 import Container from '../Container';
 import { Breed } from '@/utils/types';
 
-function Breeds({
-  rows,
-  page,
-  previous,
-  next,
-}: {
-  rows: Breed[];
-  page: number;
-  previous: () => void;
-  next: () => void;
-}) {
+function Grid({ rows, page, previous, next }: { rows: Breed[]; page: number; previous: () => void; next: () => void }) {
   const navigate = useNavigate();
 
   return (
@@ -57,4 +47,4 @@ function Breeds({
   );
 }
 
-export default Breeds;
+export default Grid;

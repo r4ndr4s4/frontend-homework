@@ -2,7 +2,7 @@ import { Typography } from '@mui/material';
 
 import Container from '@/components/Container';
 
-function Home() {
+function HomePage() {
   return (
     <Container>
       <Typography variant="h1">Hello World!</Typography>
@@ -10,4 +10,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default HomePage;
