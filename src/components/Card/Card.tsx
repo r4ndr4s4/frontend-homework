@@ -2,7 +2,6 @@ import MaterialCard from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -20,7 +19,15 @@ function Card({
 }) {
   return (
     <MaterialCard>
-      <CardHeader title={breed.name} subheader={breed.breed_group} />
+      <CardHeader
+        title={breed.name}
+        subheader={breed.breed_group}
+        action={
+          <IconButton aria-label="add to favorites" onClick={handleFavoriteChange}>
+            <FavoriteIcon sx={{ color: isFavorite ? 'Red.Base' : 'inherit' }} />
+          </IconButton>
+        }
+      />
       <CardMedia
         component="img"
         image={`https://cdn2.thedogapi.com/images/${breed.reference_image_id}.jpg`}
@@ -33,12 +40,6 @@ function Card({
           .
         </Typography>
       </CardContent>
-
-      <CardActions>
-        <IconButton aria-label="add to favorites" onClick={handleFavoriteChange}>
-          <FavoriteIcon sx={{ color: isFavorite ? 'Red.Base' : 'inherit' }} />
-        </IconButton>
-      </CardActions>
     </MaterialCard>
   );
 }
