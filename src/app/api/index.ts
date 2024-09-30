@@ -6,10 +6,10 @@ import { AppDispatch } from '@/app/store';
 
 const API_BASE_URL = import.meta.env.VITE_API_URL;
 
-export const fetchBreeds = async (limit: number, page: number, dispatch: AppDispatch): Promise<Breed[]> => {
-  const { data } = await axios.get(`${API_BASE_URL}/breeds?limit=${limit}&page=${page}`);
+export const fetchBreeds = async (page: number, dispatch: AppDispatch): Promise<Breed[]> => {
+  const { data } = await axios.get(`${API_BASE_URL}/breeds?limit=25&page=${page}`);
 
-  dispatch(updateBreeds({ data, limit, page }));
+  dispatch(updateBreeds({ data, page }));
 
   return data;
 };
