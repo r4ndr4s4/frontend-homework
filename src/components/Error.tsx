@@ -1,20 +1,25 @@
-import { Typography, Button } from '@mui/material';
+import { Typography, Button, CssBaseline } from '@mui/material';
 
 import Container from './Container';
+import { AppThemeProvider } from '@/themes/AppThemeProvider';
 
 function Error({ error }: { error: Error }) {
   return (
-    <Container>
-      <Typography variant="h1" gutterBottom>
-        Error happened!
-      </Typography>
+    <AppThemeProvider>
+      <CssBaseline />
 
-      <Typography>{error.message}</Typography>
+      <Container>
+        <Typography variant="h1" gutterBottom>
+          Error happened!
+        </Typography>
 
-      <Button variant="text" onClick={() => (location.href = '/')}>
-        Reset application
-      </Button>
-    </Container>
+        <Typography>{error.message}</Typography>
+
+        <Button variant="text" onClick={() => (location.href = '/')}>
+          Reset application
+        </Button>
+      </Container>
+    </AppThemeProvider>
   );
 }
 
