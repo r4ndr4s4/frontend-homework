@@ -37,7 +37,11 @@ function Breed({ breedId }: { breedId: number }) {
     <Container>
       <Card>
         <CardHeader title={breed.name} subheader={breed.breed_group} />
-        <CardMedia component="img" height="250" image="https://placehold.co/250x250" alt={breed.name} />
+        <CardMedia
+          component="img"
+          image={`https://cdn2.thedogapi.com/images/${breed.reference_image_id}.jpg`}
+          alt={breed.name}
+        />
 
         <CardContent>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>

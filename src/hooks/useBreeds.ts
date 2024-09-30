@@ -27,7 +27,7 @@ function useBreeds(page: number, limit: number) {
 
     const rows: GridRowsProp = breeds.map((breed) => ({
       id: breed.id,
-      breed: 'https://placehold.co/50x50', // breed.reference_image_id
+      breed: `https://cdn2.thedogapi.com/images/${breed.reference_image_id}.jpg`,
       name: breed.name,
       group: breed.breed_group,
       life: breed.life_span,

@@ -27,7 +27,7 @@ function BreedsPage() {
       sortable: false,
       filterable: false,
       disableColumnMenu: true,
-      renderCell: (params) => <img src={params.value} />,
+      renderCell: (params) => <img src={params.value} width="50" />,
     },
     { field: 'name', headerName: 'Breed name', width: 300 },
     { field: 'group', headerName: 'Breed group', width: 200, sortable: false },
