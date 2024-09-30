@@ -25,7 +25,7 @@ const breedsSlice = createSlice({
       const oldBreedsTo = state.breeds.slice(0, action.payload.page * action.payload.limit);
       const oldBreedsFrom = state.breeds.slice((action.payload.page + 1) * action.payload.limit, state.breeds.length);
 
-      state.breeds = [...oldBreedsTo, ...action.payload.data, ...oldBreedsFrom];
+      state.breeds = [...oldBreedsTo, ...action.payload.data, ...oldBreedsFrom]; // TOD use splice
     },
   },
 });

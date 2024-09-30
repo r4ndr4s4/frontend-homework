@@ -3,14 +3,8 @@ import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { useAppSelector } from '@/app/store';
 import { fetchBreed } from '@/app/api';
 
-function useBreed(breedIdAsString?: string) {
-  if (!breedIdAsString) {
-    return { isPending: false, error: Error('No breedId provided!'), breed: null };
-  }
-
-  const breedId = Number(breedIdAsString);
-
-  const breedFromStore = useAppSelector((state) => state.breeds.breeds.find((breed) => breed.id === breedId));
+function useBreed(breedId: number) {
+  const breedFromStore = useAppSelector(({ breeds }) => breeds.breeds.find((breed) => breed.id === breedId));
 
   if (breedFromStore) {
     return { isPending: false, error: null, breed: breedFromStore };

@@ -2,10 +2,12 @@ import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
 
 import { breedsReducer } from '@/features/breedsSlice';
+import { favoritesReducer } from '@/features/favoritesSlice';
 
 const store = configureStore({
   reducer: {
     breeds: breedsReducer,
+    favorites: favoritesReducer,
   },
 });
 

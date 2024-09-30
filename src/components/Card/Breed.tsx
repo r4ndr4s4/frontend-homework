@@ -11,11 +11,18 @@ import { useParams } from 'react-router-dom';
 import NotFound from '../NotFound';
 import Container from '../Container';
 import useBreed from '@/hooks/useBreed';
+import { useAppDispatch, useAppSelector } from '@/app/store';
+import { add, remove } from '@/features/favoritesSlice';
 
 function Breed() {
   const { breedId } = useParams();
+  const breedIdAsNumber = Number(breedId);
 
-  const { isPending, error, breed } = useBreed(breedId);
+  const { isPending, error, breed } = useBreed(breedIdAsNumber);
+
+  const dispatch = useAppDispatch();
+
+  const isFavorite = useAppSelector(({ favorites }) => favorites.breedIds.includes(breedIdAsNumber));
 
   if (isPending) {
     return 'Loading...';
@@ -44,8 +51,11 @@ function Breed() {
         </CardContent>
 
         <CardActions>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
+          <IconButton
+            aria-label="add to favorites"
+            onClick={() => dispatch(isFavorite ? remove(breedIdAsNumber) : add(breedIdAsNumber))}
+          >
+            <FavoriteIcon sx={{ color: isFavorite ? 'Red.Base' : 'inherit' }} />
           </IconButton>
         </CardActions>
       </Card>
