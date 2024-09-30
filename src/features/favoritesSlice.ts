@@ -13,9 +13,13 @@ const favoritesSlice = createSlice({
   initialState,
   reducers: {
     restore: (state) => {
-      const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
+      try {
+        const favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
 
-      state.breedIds = favorites;
+        state.breedIds = favorites;
+      } catch (e) {
+        throw new Error('Failed to restore favorites from localStorage.');
+      }
     },
     add: (state, action: PayloadAction<number>) => {
       const breed = state.breedIds.find((breedId) => breedId === action.payload);

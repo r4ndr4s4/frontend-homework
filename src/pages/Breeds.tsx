@@ -4,6 +4,7 @@ import Error from '../components/Error';
 import { useAppDispatch, useAppSelector } from '@/app/store';
 import { next, previous } from '@/features/breedsSlice';
 import Breeds from '@/components/Grid/Grid';
+import NotFound from '@/components/NotFound';
 
 function BreedsPage() {
   const dispatch = useAppDispatch();
@@ -19,9 +20,8 @@ function BreedsPage() {
     return <Error error={error} />;
   }
 
-  // TODO check guarding
-  if (!breeds) {
-    return null;
+  if (!breeds || !breeds.length) {
+    return <NotFound entity="Breeds" />;
   }
 
   return (

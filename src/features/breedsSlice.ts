@@ -31,6 +31,10 @@ const breedsSlice = createSlice({
       state.breeds = [...oldBreedsTo, ...action.payload.data, ...oldBreedsFrom]; // TOD use splice
     },
     previous: (state) => {
+      if (state.currentPage === 0) {
+        return;
+      }
+
       state.currentPage -= 1;
     },
     next: (state) => {

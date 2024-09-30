@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import Container from './Container';
 
-function NotFound({ entity = 'Page' }: { entity?: 'Page' | 'Breed' }) {
+function NotFound({ entity = 'Page' }: { entity?: 'Page' | 'Breed' | 'Breeds' | 'Favorites' }) {
   const navigate = useNavigate();
 
   return (
