@@ -6,7 +6,7 @@ import { useAppDispatch } from '@/app/store';
 import { fetchBreeds } from '@/app/api';
 
 function useBreeds(page: number, limit: number) {
-  const [rows, setRows] = useState<GridRowsProp>();
+  const [rows, setRows] = useState<GridRowsProp>([]);
 
   const dispatch = useAppDispatch();
 

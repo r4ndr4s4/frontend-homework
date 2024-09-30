@@ -10,7 +10,7 @@ function Error({ error }: { error: Error }) {
 
       <Container>
         <Typography variant="h1" gutterBottom>
-          Error happened!
+          Error occurred!
         </Typography>
 
         <Typography>{error.message}</Typography>

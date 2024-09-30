@@ -12,6 +12,7 @@ import Container from '../Container';
 import useBreed from '@/hooks/useBreed';
 import { useAppDispatch, useAppSelector } from '@/app/store';
 import { add as addFavorite, remove as removeFavorite } from '@/features/favoritesSlice';
+import Error from '../Error';
 
 function Breed({ breedId }: { breedId: number }) {
   const { isPending, error, breed } = useBreed(breedId);
@@ -24,9 +25,8 @@ function Breed({ breedId }: { breedId: number }) {
     return 'Loading...';
   }
 
-  // TODO add error boundary
   if (error) {
-    return 'An error has occurred: ' + error.message;
+    return <Error error={error} />;
   }
 
   if (!breed) {

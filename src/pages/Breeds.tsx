@@ -7,6 +7,7 @@ import { useState } from 'react';
 import Container from '@/components/Container';
 import Breeds from '@/components/DataGrid/Breeds';
 import useBreeds from '@/hooks/useBreeds';
+import Error from '../components/Error';
 
 function BreedsPage() {
   const [paginationModel, setPaginationModel] = useState({
@@ -47,14 +48,12 @@ function BreedsPage() {
     },
   ];
 
-  // TODO check !rows guarding
-  if (isPending || !rows) {
+  if (isPending) {
     return 'Loading...';
   }
 
-  // TODO add error boundary
   if (error) {
-    return 'An error has occurred: ' + error.message;
+    return <Error error={error} />;
   }
 
   return (
