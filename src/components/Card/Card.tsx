@@ -35,10 +35,35 @@ function Card({
       />
 
       <CardContent>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          {breed.bred_for}. {breed.life_span}. {breed.weight.metric} kgs, {breed.height.metric} cms. {breed.temperament}
-          .
-        </Typography>
+        {breed.bred_for && (
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            Breed for: <strong>{breed.bred_for}</strong>.
+          </Typography>
+        )}
+
+        {breed.life_span && (
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            Life expectancy: <strong>{breed.life_span}</strong>.
+          </Typography>
+        )}
+
+        {breed.weight.metric && (
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            Average weight: <strong>{breed.weight.metric} kgs</strong>.
+          </Typography>
+        )}
+
+        {breed.height.metric && (
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            Average height: <strong>{breed.height.metric} cms</strong>.
+          </Typography>
+        )}
+
+        {breed.temperament && (
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            Temperament: <strong>{breed.temperament}</strong>.
+          </Typography>
+        )}
       </CardContent>
     </MaterialCard>
   );
