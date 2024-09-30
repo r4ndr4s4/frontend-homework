@@ -6,7 +6,6 @@ import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import { useParams } from 'react-router-dom';
 
 import NotFound from '../NotFound';
 import Container from '../Container';
@@ -14,15 +13,12 @@ import useBreed from '@/hooks/useBreed';
 import { useAppDispatch, useAppSelector } from '@/app/store';
 import { add, remove } from '@/features/favoritesSlice';
 
-function Breed() {
-  const { breedId } = useParams();
-  const breedIdAsNumber = Number(breedId);
-
-  const { isPending, error, breed } = useBreed(breedIdAsNumber);
+function Breed({ breedId }: { breedId: number }) {
+  const { isPending, error, breed } = useBreed(breedId);
 
   const dispatch = useAppDispatch();
 
-  const isFavorite = useAppSelector(({ favorites }) => favorites.breedIds.includes(breedIdAsNumber));
+  const isFavorite = useAppSelector(({ favorites }) => favorites.breedIds.includes(breedId));
 
   if (isPending) {
     return 'Loading...';
@@ -53,7 +49,7 @@ function Breed() {
         <CardActions>
           <IconButton
             aria-label="add to favorites"
-            onClick={() => dispatch(isFavorite ? remove(breedIdAsNumber) : add(breedIdAsNumber))}
+            onClick={() => dispatch(isFavorite ? remove(breedId) : add(breedId))}
           >
             <FavoriteIcon sx={{ color: isFavorite ? 'Red.Base' : 'inherit' }} />
           </IconButton>
