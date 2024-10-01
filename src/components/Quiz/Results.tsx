@@ -9,14 +9,15 @@ function Results() {
       <CardMedia sx={{ maxWidth: 640, height: 480 }} image="/Emma.jpg" title="Emma" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          This is Emma, my dog. She is a 10-month-old medium-sized poodle.
+          This is Emma, my first dog. She is a 10-month-old medium-sized poodle.
         </Typography>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
           She is very friendly and loves to play with other dogs. She doesn't shed much and is hypoallergenic. She is a
           great choice for families with children. She doesn't bark much and is very easy to train.
         </Typography>
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          However, she needs regular grooming and exercise. Still, 10/10 would recommend poodles.
+          However, she needs regular grooming and exercise. Still, 10/10 would recommend poodles. They are the best and
+          they fit most people, they come in several different sizes and colors.
         </Typography>
       </CardContent>
     </Card>
