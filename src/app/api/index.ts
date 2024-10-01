@@ -7,10 +7,10 @@ import env from '@/utils/env';
 
 const API_BASE_URL = env.VITE_API_URL;
 
-export const fetchBreeds = async (page: number, dispatch: AppDispatch): Promise<Breed[]> => {
-  const { data } = await axios.get(`${API_BASE_URL}/breeds?limit=25&page=${page}`);
+export const fetchBreeds = async (limit: number, page: number, dispatch: AppDispatch): Promise<Breed[]> => {
+  const { data } = await axios.get(`${API_BASE_URL}/breeds?limit=${limit}&page=${page}`);
 
-  dispatch(updateBreeds({ data, page }));
+  dispatch(updateBreeds({ data, limit, page }));
 
   return data;
 };
