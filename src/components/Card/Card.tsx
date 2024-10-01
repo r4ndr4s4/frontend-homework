@@ -18,7 +18,7 @@ function Card({
   handleFavoriteChange: () => void;
 }) {
   return (
-    <MaterialCard>
+    <MaterialCard sx={{ maxWidth: 640 }}>
       <CardHeader
         title={breed.name}
         subheader={breed.breed_group}
@@ -30,6 +30,7 @@ function Card({
       />
       <CardMedia
         component="img"
+        sx={{ maxWidth: 640 }}
         image={`https://cdn2.thedogapi.com/images/${breed.reference_image_id}.jpg`}
         alt={breed.name}
       />

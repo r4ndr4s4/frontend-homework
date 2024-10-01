@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 function Results() {
   return (
     <Card sx={{ maxWidth: 640 }}>
-      <CardMedia sx={{ width: 640, height: 480 }} image="/Emma.jpg" title="Emma" />
+      <CardMedia sx={{ maxWidth: 640, height: 480 }} image="/Emma.jpg" title="Emma" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           This is Emma, my dog. She is a 10-month-old medium-sized poodle.

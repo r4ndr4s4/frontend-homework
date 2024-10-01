@@ -15,11 +15,10 @@ function Grid({
     <DataGrid
       rows={rows}
       columns={columns}
-      initialState={{ pagination: { rowCount: -1 } }}
-      // paginationMeta={paginationMeta} // TODO add paginationMeta
       pageSizeOptions={[5, 10, 25, 50]}
       paginationModel={paginationModel}
       paginationMode="server"
+      rowCount={-1}
       onPaginationModelChange={setPaginationModel}
       disableRowSelectionOnClick
       disableColumnResize
