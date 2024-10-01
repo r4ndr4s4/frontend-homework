@@ -36,7 +36,14 @@ function BreedsPage() {
         renderCell: (params) => <LazyLoadImage src={params.value} width="50" />,
       },
       { field: 'name', headerName: 'Breed name', width: 300 },
-      { field: 'group', headerName: 'Breed group', width: 200, sortable: false },
+      {
+        field: 'group',
+        headerName: 'Breed group',
+        width: 200,
+        sortable: false,
+        type: 'singleSelect',
+        valueOptions: ['Toy', 'Hound', 'Terrier', 'Working', 'Mixed', 'Non-Sporting', 'Sporting', 'Herding', '-'],
+      },
       { field: 'life', headerName: 'Life expectancy', width: 200, filterable: false, disableColumnMenu: true },
       {
         field: 'open',
