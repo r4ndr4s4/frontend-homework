@@ -24,10 +24,14 @@ const breedsSlice = createSlice({
         page: number;
       }>,
     ) => {
-      const oldBreedsTo = state.breeds.slice(0, action.payload.page * action.payload.limit);
-      const oldBreedsFrom = state.breeds.slice((action.payload.page + 1) * action.payload.limit, state.breeds.length);
+      const {
+        payload: { page, limit, data },
+      } = action;
 
-      state.breeds = [...oldBreedsTo, ...action.payload.data, ...oldBreedsFrom]; // TOD use splice
+      const oldBreedsTo = state.breeds.slice(0, page * limit);
+      const oldBreedsFrom = state.breeds.slice((page + 1) * limit, state.breeds.length);
+
+      state.breeds = [...oldBreedsTo, ...data, ...oldBreedsFrom];
     },
     paginate: (state, action: PayloadAction<number>) => {
       state.currentPage = action.payload;

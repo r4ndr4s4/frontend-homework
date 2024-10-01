@@ -1,5 +1,5 @@
 import { Box, IconButton } from '@mui/material';
-import { GridColDef } from '@mui/x-data-grid';
+import { GridColDef, GridPaginationModel } from '@mui/x-data-grid';
 import LaunchIcon from '@mui/icons-material/Launch';
 import { useNavigate } from 'react-router-dom';
 import { useMemo, useState } from 'react';
@@ -17,7 +17,7 @@ function BreedsPage() {
   const dispatch = useAppDispatch();
   const currentPage = useAppSelector(({ breeds }) => breeds.currentPage);
 
-  const [paginationModel, setPaginationModel] = useState({
+  const [paginationModel, setPaginationModel] = useState<GridPaginationModel>({
     pageSize: 10,
     page: currentPage,
   });
@@ -73,8 +73,6 @@ function BreedsPage() {
   if (error) {
     return <Error error={error} />;
   }
-
-  // TODO check guardings: !rows || !rows.length
 
   return (
     <Container>
