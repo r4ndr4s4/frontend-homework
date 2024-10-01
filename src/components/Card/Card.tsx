@@ -28,6 +28,7 @@ function Card({
           </IconButton>
         }
       />
+
       <CardMedia
         component="img"
         sx={{ maxWidth: 640 }}

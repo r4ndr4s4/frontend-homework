@@ -2,7 +2,7 @@ import { Box, Paper, styled } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import { ReactNode } from 'react';
 
-export const Item = styled(Paper)(({ theme }) => ({
+const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: '#fff',
   ...theme.typography.body2,
   padding: theme.spacing(1),

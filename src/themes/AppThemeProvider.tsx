@@ -84,6 +84,7 @@ declare module '@mui/material/Typography' {
     Body1SemiBold: true;
   }
 }
+
 export const AppThemeProvider: React.FC<Props> = ({ children }) => {
   const theme = responsiveFontSizes(
     createTheme({

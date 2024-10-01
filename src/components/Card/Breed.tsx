@@ -7,11 +7,10 @@ import Error from '../Error';
 import Card from '@/components/Card/Card';
 
 function Breed({ breedId }: { breedId: number }) {
-  const { isPending, error, breed } = useBreed(breedId);
-
+  const isFavorite = useAppSelector(({ favorites }) => favorites.breedIds.includes(breedId));
   const dispatch = useAppDispatch();
 
-  const isFavorite = useAppSelector(({ favorites }) => favorites.breedIds.includes(breedId));
+  const { isPending, error, breed } = useBreed(breedId);
 
   if (isPending) {
     return 'Loading...';

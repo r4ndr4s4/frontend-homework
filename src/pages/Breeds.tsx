@@ -14,8 +14,9 @@ import { paginate } from '@/features/breedsSlice';
 
 function BreedsPage() {
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
+
   const currentPage = useAppSelector(({ breeds }) => breeds.currentPage);
+  const dispatch = useAppDispatch();
 
   const [paginationModel, setPaginationModel] = useState<GridPaginationModel>({
     pageSize: 10,
@@ -63,7 +64,7 @@ function BreedsPage() {
         ),
       },
     ],
-    [],
+    [navigate],
   );
 
   if (isPending) {
