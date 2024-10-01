@@ -22,7 +22,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
           <AppThemeProvider>
             <App />
             <Analytics />
-            <ReactQueryDevtools initialIsOpen={false} buttonPosition="top-right" />
+            <ReactQueryDevtools initialIsOpen={false} buttonPosition="top-left" />
           </AppThemeProvider>
         </QueryClientProvider>
       </Provider>

@@ -34,6 +34,10 @@ function Menu() {
           <Button color="inherit" onClick={() => navigate('/breeds/favorites')}>
             Favorites
           </Button>
+
+          <Button color="inherit" onClick={() => navigate('/quiz')}>
+            Quiz
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>
