@@ -29,7 +29,7 @@ function BreedsPage() {
     () => [
       {
         field: 'breed',
-        headerName: 'Breed',
+        headerName: '',
         width: 70,
         sortable: false,
         filterable: false,
