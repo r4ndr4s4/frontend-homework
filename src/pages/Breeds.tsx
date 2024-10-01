@@ -9,14 +9,18 @@ import Container from '@/components/Container';
 import useBreeds from '@/hooks/useBreeds';
 import Error from '../components/Error';
 import Grid from '@/components/Grid/Grid';
+import { useAppDispatch, useAppSelector } from '@/app/store';
+import { paginate } from '@/features/breedsSlice';
 
 function BreedsPage() {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const currentPage = useAppSelector(({ breeds }) => breeds.currentPage);
+
   const [paginationModel, setPaginationModel] = useState({
     pageSize: 25,
-    page: 0,
+    page: currentPage,
   });
-
-  const navigate = useNavigate();
 
   const { isPending, error, rows } = useBreeds(paginationModel.page, paginationModel.pageSize);
 
@@ -63,7 +67,15 @@ function BreedsPage() {
 
   return (
     <Container>
-      <Grid rows={rows} columns={columns} paginationModel={paginationModel} setPaginationModel={setPaginationModel} />
+      <Grid
+        rows={rows}
+        columns={columns}
+        paginationModel={paginationModel}
+        setPaginationModel={(model) => {
+          dispatch(paginate(model.page));
+          setPaginationModel(model);
+        }}
+      />
     </Container>
   );
 }

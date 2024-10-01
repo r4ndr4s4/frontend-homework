@@ -29,19 +29,12 @@ const breedsSlice = createSlice({
 
       state.breeds = [...oldBreedsTo, ...action.payload.data, ...oldBreedsFrom]; // TOD use splice
     },
-    previous: (state) => {
-      if (state.currentPage === 0) {
-        return;
-      }
-
-      state.currentPage -= 1;
-    },
-    next: (state) => {
-      state.currentPage += 1;
+    paginate: (state, action: PayloadAction<number>) => {
+      state.currentPage = action.payload;
     },
   },
 });
 
 export const breedsReducer = breedsSlice.reducer;
 
-export const { update, previous, next } = breedsSlice.actions;
+export const { update, paginate } = breedsSlice.actions;
