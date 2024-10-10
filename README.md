@@ -1,4 +1,4 @@
-# kpmg-frontend-homework-project
+# frontend-homework
 
 - Original boilerplate: [https://github.com/emre-cil/vite-mui-ts/](https://github.com/emre-cil/vite-mui-ts/)
 - Deployed app: [https://kpmg-frontend-homework-project.vercel.app/](https://kpmg-frontend-homework-project.vercel.app/)
